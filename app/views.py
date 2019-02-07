@@ -9,11 +9,11 @@ def index():
     '''
     View root page function that returns the index page and its data
     '''
-    # Getting popular news
-    popular_news = get_news('popular')
-    print(popular_news)
+    # Getting general news
+    general_news = get_news('general')
+    print(general_news)
     title = 'Home - Welcome to The best News Website Online'
-    return render_template('index.html', name = title,popular = popular_news)
+    return render_template('index.html', name = title,general = general_news)
 
 @app.route('/news')
 def news():
