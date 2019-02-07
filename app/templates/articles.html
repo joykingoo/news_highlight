@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+
+
+{% block content %}
+
+<div class="container">
+  <h3 style="font-weight: italic; font-size: 30px;">News Highlights</h3>
+  <hr><br>
+      <div class="row">
+        {{ macro.displayArticleList(articles) }}
+      </div>
+</div>
+{% endblock %}
