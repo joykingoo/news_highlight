@@ -1,28 +1,30 @@
-{% extends 'base.html'%}
 {% import 'macros.html' as macro%}
-<!DOCTYPE html>
-<html>
-    <head>
-        
-    </head>
-    <body>
-        <!-- Content block -->
-        {% block content %}     
+{% extends 'base.html'%}
+<!-- Content block -->
+{% block content %}
+<div class = "container">
+        <div class ="row">      
         <!-- General News section  -->
-        <h3> General News Source</h3>
+        <h3> General News </h3>
          <ul>
             {{ macro.displayNewsList(general)}}
         </ul>
+        </div> 
+
+        <div class ="row"> 
         <!-- Entertainment News section  -->
-        <h3>Entertainment Source</h3>
+        <h3>Entertainment News</h3>
          <ul>
             {{ macro.displayNewsList(entertainment )}}
         </ul>
+        </div> 
+
+        <div class ="row"> 
         <!-- Science News section  -->
-        <h3>Science Source</h3>
+        <h3>Science News</h3>
          <ul>
             {{ macro.displayNewsList(science)}}
         </ul>
-        {% endblock%}
-    </body>
-</html>
+        </div>> 
+</div>
+{% endblock%}
