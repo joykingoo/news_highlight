@@ -2,7 +2,7 @@ import urllib.request,json
 from .models import News,Articles
 
 # Getting api key
-api_key = app.config['NEWS_API_KEY']
+api_key = None
 # Getting the base urls
 base_url = None
 articles_base_url = None

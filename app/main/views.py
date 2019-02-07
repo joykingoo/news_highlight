@@ -1,7 +1,7 @@
 from flask import render_template
-from .request import get_news,get_articles
+from ..request import get_news,get_articles
 from ..models import News,Articles
-
+from . import main
 # Views
 @main.route('/')
 def index():
