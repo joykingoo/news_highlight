@@ -1,3 +1,4 @@
+{% import 'macros.html' as macro%}
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,16 +8,17 @@
         <!-- General News section  -->
         <h3> General News Source</h3>
          <ul>
-            {% for general in general_news %}
-                <li>{{ general.name(general)}}</li>
-            {% endfor %}
+            {{ macro.displayNewsList(general)}}
         </ul>
         <!-- Entertainment News section  -->
         <h3>Entertainment Source</h3>
          <ul>
-            {% for entertainment in entertainment_news %}
-                <li>{{ entertainment.name(general)}}</li>
-            {% endfor %}
+            {{ macro.displayNewsList(entertainment )}}
+        </ul>
+        <!-- Science News section  -->
+        <h3>Science Source</h3>
+         <ul>
+            {{ macro.displayNewsList(science)}}
         </ul>
     </body>
 </html>
