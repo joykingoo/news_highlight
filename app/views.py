@@ -21,11 +21,12 @@ def index():
     title = 'Home - Welcome to The best News Website Online'
     return render_template('index.html', name = title,general = general_news, entertainment =entertainment_news, science =science_news)
 
-@app.route('/news')
-def news():
+@app.route('/news/<int:id>')
+def news(id):
 
     '''
-    View movie page function that returns the movie details page and its data
+    View news page function that returns the news details page and its data
     '''
-    title = 'Home - Welcome to The best News Website '
-    return render_template('news.html', title = title)
+    news = get_news(id)
+    name =f'{news.name}'
+    return render_template('news.html', name = name)
