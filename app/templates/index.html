@@ -4,11 +4,18 @@
         
     </head>
     <body>
-        <!-- general News section  -->
-        <h3> general News Source</h3>
+        <!-- General News section  -->
+        <h3> General News Source</h3>
          <ul>
             {% for general in general_news %}
                 <li>{{ general.name(general)}}</li>
+            {% endfor %}
+        </ul>
+        <!-- Entertainment News section  -->
+        <h3>Entertainment Source</h3>
+         <ul>
+            {% for entertainment in entertainment_news %}
+                <li>{{ entertainment.name(general)}}</li>
             {% endfor %}
         </ul>
     </body>

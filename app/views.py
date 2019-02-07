@@ -12,8 +12,11 @@ def index():
     # Getting general news
     general_news = get_news('general')
     print(general_news)
+     # Getting entertainment news
+    entertainment_news = get_news('entertainment')
+    print(entertainment_news)
     title = 'Home - Welcome to The best News Website Online'
-    return render_template('index.html', name = title,general = general_news)
+    return render_template('index.html', name = title,general = general_news, entertainment =entertainment_news)
 
 @app.route('/news')
 def news():
