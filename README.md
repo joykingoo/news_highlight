@@ -1,7 +1,7 @@
 # News Highlight
 #### Date of Current Version, February 02 2019
 #### By **Joy King'oo**
-This project was generated with [Python] and developed u
+This project was generated with [Python] 
 
 ## Description
 This is a simple app which allows a user to get news from various news sources.
