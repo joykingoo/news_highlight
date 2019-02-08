@@ -17,16 +17,17 @@ def get_news(category):
     '''
     Function that gets the json response to our url request
     '''
-    get_news_url = 'https://newsapi.org/v2/sources?language=en&category={}&apiKey={}'.format(category,api_key)
+    get_news_url = 'https://newsapi.org/v2/sources?language=en&category=general&apiKey=25c1ea6f9cbe4912b8e959433eba1c33'
 
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
         get_news_response = json.loads(get_news_data)
+    
 
         news_results = None
 
-        if get_news_response['news']:
-            news_results_list = get_news_response['news']
+        if get_news_response['sources']:
+            news_results_list = get_news_response['sources']
             news_results = process_results(news_results_list)
 
 
@@ -60,7 +61,7 @@ def process_results(news_list):
 
 def get_articles(id):
     '''Function thet gets the json response to our url request'''
-    get_articles_url ='https://newsapi.org/v2/everything?source={}&apiKey={}'.format(id, api_key)
+    get_articles_url = 'https://newsapi.org/v1/articles?source={}&apiKey={}'.format(id,api_key)
 
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
@@ -90,10 +91,9 @@ def process_articles(article_list):
         author = article_item.get('author')
         urlToImage = article_item.get('urlToImage')
         publishedAt = article_item.get('publishedAt')
-        content = article_item.get('content')
         url = article_item.get('url')
         if urlToImage:
-            article_object = Articles(id,title,description,author,urlToImage,publishedAt,content,url)
+            article_object = Articles(id,title,description,author,urlToImage,publishedAt,url)
             article_results.append(article_object)
 
     return article_results
